@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Veggie Delight - Fresh & Healthy Vegetables</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #e7f5e9;
+    color: #2e4d25;
+    line-height: 1.6;
+  }
+  header {
+    background: linear-gradient(135deg, #4caf50, #81c784);
+    padding: 2rem 1rem;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 8px rgb(50 90 30 / 0.3);
+  }
+  header h1 {
+    font-size: 3rem;
+    margin: 0;
+    letter-spacing: 0.05em;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.15);
+  }
+  header p {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+    font-weight: 400;
+  }
+  main {
+    max-width: 900px;
+    margin: 2rem auto 3rem;
+    padding: 0 1rem;
+  }
+  section.list {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .card {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 6px 12px rgb(34 83 23 / 0.12);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 24px rgb(34 83 23 / 0.25);
+  }
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  .card-content {
+    padding: 1rem 1.25rem;
+    flex-grow: 1;
+  }
+  .card-content h3 {
+    margin: 0 0 0.75rem;
+    font-weight: 700;
+    font-size: 1.4rem;
+  }
+  .card-content p {
+    margin: 0;
+    font-size: 1rem;
+    color: #3b5e2b;
+  }
+  footer {
+    background: #427d3e;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+  }
+  #back-button {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgb(50 90 30 / 0.4);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 1000;
+  }
+  #back-button:hover {
+    background-color: #388e3c;
+    transform: translateY(-2px);
+  }
+  @media (max-width: 400px) {
+    header h1 {
+      font-size: 2.25rem;
+    }
+  }
+  
+</style>
+</head>
+<body>
+<header>
+   <a href="../index.html#categories">
+  <button id="back-button">← Back</button>
+</a>
+  <h1>Land’s Harvest Delight</h1>
+  <p>Fresh & Healthy meats for a Vibrant Life</p>
+</header>
+<main>
+  <section class="intro">
+    <p>Welcome to Meat Delight, your go-to place for discovering fresh, savory meats that elevate your meals and fuel your body. Dive into our hearty selection below and savor the best flavors from land to table!</p>
+  </section>
+  <section class="list">
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=400&q=80" alt="Tomatoes" />
+      <div class="card-content">
+        <h3>Chicken</h3>
+        <p> Mild and versatile, perfect for grilling, roasting, stir-fries, or hearty soups.</p>
+      </div>
+    </article>
+    <article class="v-card">
+      <img src="https://images.unsplash.com/photo-1506807803488-8eafc1537204?auto=format&fit=crop&w=400&q=80" alt="Carrots" />
+      <div class="card-content">
+        <h3>Beef</h3>
+        <p>Rich and flavorful, ideal for steaks, stews, burgers, or slow-cooked dishes.</p>
+      </div>
+    </article>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=400&q=80" alt="Broccoli" />
+      <div class="card-content">
+        <h3>Pork</h3>
+        <p>Tender and juicy, great for roasts, barbecues, sausages, or stir-fries.</p>
+      </div>
+    </article>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1438109491414-7198515b166b?auto=format&fit=crop&w=400&q=80" alt="Bell Peppers" />
+      <div class="card-content">
+        <h3>Turkey</h3>
+        <p>Lean and protein-packed, perfect for roasting, sandwiches, or ground meat recipes.</p>
+      </div>
+    </article>
+  </section>
+</main>
+ <footer>
+        <marquee behavior="scroll" direction="left" scrollamount="5">
+            &copy; 2025 Grocery Store. All rights reserved. | Visit us for fresh produce and great deals!
+        </marquee>
+    </footer>
+</body>
+</html>
+

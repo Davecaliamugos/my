@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Responsive Navigation Bar</title>
+<style>
+  /* Reset and base */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0d1117;
+    color: #c9d1d9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Navbar container */
+  nav {
+    background: #161b22;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+  }
+
+  /* Brand/logo */
+  .nav-brand {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #eeeeee;
+    letter-spacing: 0.05em;
+    user-select: none;
+  }
+
+  /* Nav links */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+
+  .nav-links li {
+    margin-left: 1.5rem;
+  }
+
+  .nav-links a {
+    color: #c9d1d9;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  .nav-links a:hover,
+  .nav-links a:focus {
+    color: #58a6ff;
+    outline: none;
+  }
+
+  /* Hamburger menu button */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 26px;
+    height: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+
+  .hamburger div {
+    width: 100%;
+    height: 3px;
+    background: #c9d1d9;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Mobile menu - hidden by default */
+  @media (max-width: 700px) {
+    .nav-links {
+      position: fixed;
+      top: 56px;
+      left: 0;
+      right: 0;
+      background-color: #161b22;
+      flex-direction: column;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s ease;
+      border-bottom: 2px solid #58a6ff;
+      z-index: 999;
+    }
+    .nav-links li {
+      margin: 1rem 0;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+    .nav-links.open {
+      max-height: 300px; /* enough to fit all items */
+    }
+    .hamburger {
+      display: flex;
+    }
+  }
+
+  /* Hamburger animation toggle */
+  .hamburger.active div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active div:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* Content placeholder spacing under fixed nav */
+  main {
+    flex: 1 0 auto;
+    padding: 80px 1rem 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  /* Make sure it fits a 600px height screen by limiting the main's min height */
+  @media (max-height: 600px) {
+    main {
+      padding-top: 70px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="nav-brand" tabindex="0">CoolBrand</div>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation">
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+    <ul class="nav-links" id="primary-navigation">
+      <li><a href="#home" tabindex="0">Home</a></li>
+      <li><a href="#about" tabindex="0">About</a></li>
+      <li><a href="#services" tabindex="0">Services</a></li>
+      <li><a href="#contact" tabindex="0">Contact</a></li>
+      <li><a href="#login" tabindex="0">Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <h1>Welcome to the Responsive Navigation Demo</h1>
+  <p>This navigation bar is fully responsive and optimized for mobile screens with a max width of 350px and max height of 600px. Try resizing your browser or open this page on your mobile device.</p>
+</main>
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  hamburger.addEventListener('click', () => {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', !expanded);
+  });
+
+  // Close menu when a nav link is clicked (on mobile)
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if(window.innerWidth <= 700) {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', false);
+      }
+    });
+  });
+
+</script>
+</body>
+</html>
+

@@ -1,0 +1,160 @@
+/* Reset default margins and paddings */
+body, h1, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #fcefec, #eee9e5);
+}
+
+/* Header styles */
+header {
+    background: linear-gradient(to right, #e4d6d2, #9e958d); 
+    color: white; 
+    padding: 20px; 
+    text-align: center; 
+}
+
+.logo img {
+    width: 100px; 
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Title styles */
+h1 {
+    font-size: 2.5em; 
+    margin: 10px 0; 
+}
+
+/* Navigation styles */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, #b8c9ce, #dfe1e4);
+    padding: 15px 0;
+    z-index: 1000;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease; 
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.3); 
+    color: #ffeb3b; 
+}
+
+/* Background styles */
+.bg {
+    background-image: url('./grocery.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    padding: 50px 0;
+    border-radius: 20px;
+}
+
+/* Main content styles */
+main {
+    padding: 20px; 
+}
+
+/* Hero section styles */
+.home {
+    text-align: center; 
+    margin: 40px 0; 
+}
+
+.home h2 {
+    font-size: 2.5em; 
+    margin-bottom: 10px; 
+}
+
+.home p {
+    font-size: 1.2em; 
+    margin-bottom: 20px; 
+}
+
+/* Services section styles */
+.services h2 {
+    text-align: center; 
+    margin-bottom: 20px;
+}
+
+.service {
+    box-sizing: border-box;
+    background: linear-gradient(to right, #dfdfda, #f0e7e2);
+    margin: 5px;
+    padding: 20px; /* Increased padding for better spacing */
+    border-radius: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+.service:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+.service h3 {
+    text-align: center; 
+    margin-bottom: 10px; 
+}
+
+/* Image styles */
+.img-ko {
+    float: right;
+}
+
+.img-ko img {
+    width: 100%; 
+    height: auto; 
+    padding-left: 30px; 
+}
+
+/* Featured products styles */
+.featured-products {
+    margin: 40px 0; 
+}
+
+.featured-products h2 {
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+
+.product-grid {
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 20px; 
+}
+
+.product {
+    background: white; 
+    border-radius: 5px; 
+    padding: 15px; 
+    text-align: center; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease; 
+}
+
+.product:hover {
+    transform: scale(1.05
